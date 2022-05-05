@@ -19,12 +19,10 @@ const Home: NextPage = () => {
       <Layout>
         <section className={styles.hero}>
           <div className='container mx-auto flex flex-col h-full px-4 py-9'>
-            <Image src={heroPic} width={1504} height={602} />
+            <Image src={heroPic} width={1504} height={602} alt="Art2Buisness" />
             <h1 className='w-full xl:w-5/6 mt-auto text-white'>Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством</h1>
           </div>
-          
         </section>
-        
       </Layout>
     </>
   )

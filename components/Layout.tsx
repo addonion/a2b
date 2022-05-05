@@ -10,6 +10,7 @@ const Layout = ({children}: Props) => {
   return (
     <>
       <Head>
+        <html lang='ru' />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous" href="/fonts/MabryProBold.woff2" />
