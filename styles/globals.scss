@@ -1,0 +1,22 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Шрифты */
+@font-face {
+  font-family: "Mabry Pro";
+  src: url("/fonts/MabryProBold.woff2") format("woff2"), url("/fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+body {
+  font-size: 16px;
+}
+
+h1 {
+  font-family: "Mabry Pro";
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
