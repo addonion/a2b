@@ -13,11 +13,11 @@ const Layout = ({children}: Props) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous" href="/fonts/MabryProBold.woff2" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <>
-        {children}
-      </>
+      {children}
+      
     </>
   )
 }
