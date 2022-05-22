@@ -1,6 +1,10 @@
 .hero {
   background-color: #FF90E8;
-  height: 90vh;
-  max-height: 60rem;
-  min-height: 20rem;
+}
+
+.navigation {
+  background-color: #000;
+  a {
+    color: #fff;
+  }
 }
