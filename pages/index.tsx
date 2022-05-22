@@ -31,8 +31,9 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Art2Buisness</title>
+        <title>Проведение тимбилдинга в Перми — Art2Buisness</title>
         <meta name="description" content="Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством" />
+        <link rel="canonical" href="https://www.art2business.ru/" />
       </Head>
 
       <Layout>
@@ -102,7 +103,12 @@ const Home: NextPage = () => {
         <section id="contacts" className="container mx-auto grid md:grid-cols-2 gap-4 px-4">
           <div className="my-auto pb-4 md:pb-40 lg:pb-96">
             <h2 className="mb-2">КОНТАКТЫ:</h2>
-            <p>+7 (919) 488-66-76 — Анастасия,</p>
+            <p>
+              <Link href="tel:+79194886676">
+                <a>+7 (919) 488-66-76</a>
+              </Link>
+               — Анастасия,
+            </p>
             <p>+7 (951) 942-82-85 — Лейла,</p>
             <p>art2.business@yandex.ru</p>
           </div>
