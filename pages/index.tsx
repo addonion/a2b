@@ -10,7 +10,7 @@ import heroPic from '../images/hero.png'
 import teambuildingPic from '../images/teambuilding.png'
 import contactsPic from '../images/contacts.png'
 
-const menuItems = [
+const menuItems: [ string, string ][] = [
   ['Тимбилдинг', '#teambuilding'],
   ['Цена', '#price'],
   ['А ещё мы…', '#more'],
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
           <div className='container mx-auto flex flex-col h-full px-4'>
             <div className='my-auto md:mb-0'>
               <div className='hidden md:block'>
-                <Image src={heroPic} width={1504} height={657} layout="responsive" priority={true} alt="Art2Buisness" />
+                <Image src={heroPic} width={1504} height={657} layout="responsive" priority={true} placeholder="blur" alt="Art2Buisness" />
               </div>
               <h1 className='w-full xl:w-5/6 md:mt-10 xl:mt-16'>
                 Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
 
         <section id='teambuilding' className='container mx-auto flex flex-col px-4 py-16 md:py-64'>
           <div>
-            <Image src={teambuildingPic} width={1504} height={601} layout="responsive" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
+            <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
           </div>
           <h2 className='mt-10'>
             ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ
@@ -75,7 +75,7 @@ const Home: NextPage = () => {
           </div>
           <div className={styles.contacts__pic}>
             <div>
-              <Image src={contactsPic} width={744} height={1062} layout="responsive" alt="КОНТАКТЫ" />
+              <Image src={contactsPic} width={744} height={1062} layout="responsive" placeholder="blur" alt="КОНТАКТЫ" />
             </div>
           </div>
         </section>
