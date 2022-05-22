@@ -6,8 +6,15 @@
   background-color: #000;
   .navigation__link {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
+  }
+}
+
+.feedback {
+  &__text {
+    font-family: "Mabry Pro";
+    font-size: 2rem;
   }
 }
 
@@ -15,8 +22,7 @@
   background-color: #000;
   &__achivment {
     filter: drop-shadow(10px 10px 0px #ffc900);
-    font-family: "Mabry Pro";
-    font-weight: 300;
+    font-family: "Mabry Pro Light";
     font-size: 1.5rem;
     @media (max-width: 767.98px) {
       font-size: 1rem;

@@ -9,6 +9,7 @@ import styles from "../styles/Main.module.scss";
 import heroPic from "../images/hero.png";
 import heroPicMobile from "../images/hero--mobile.png";
 import teambuildingPic from "../images/teambuilding.png";
+import feedbackPic from "../images/feedback.png";
 import contactsPic from "../images/contacts.png";
 
 const menuItems: [string, string][] = [
@@ -64,17 +65,35 @@ const Home: NextPage = () => {
         {/* ТИМБИЛДИНГ */}
         <section id="teambuilding" className="container mx-auto flex flex-col px-4 py-32 md:py-64">
           <div>
-            <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
+            <Image src={teambuildingPic} width={1504} height={601} placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
           </div>
           <h2 className="mt-10">ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ</h2>
+        </section>
+
+        {/* Отзыв */}
+        <section className={`${styles.feedback} container mx-auto px-4 py-16 md:py-32 md:grid md:grid-cols-3 md:gap-10 lg:gap-32`}>
+          <div className="w-1/2 mb-8 md:w-full md:col-span-1 md:mb-0">
+            <div>
+              <Image src={feedbackPic} width={426} height={535} layout="responsive" placeholder="blur" alt="Татьяна Ивановна, учитель школы №42" />
+            </div>
+          </div>
+          <div className="col-span-3 md:col-span-2 my-auto">
+            <p className={`${styles.feedback__text} mb-4 md:mb-8`}>
+              «Мы проходили тимбилдинг с коллегами-учителями, после этого атмосфера в коллектисе стала просто чудесной! Я знаю, что могу положиться на своих товарищей по работе и могу поделиться с ними своими
+              переживаниями об учениках»
+            </p>
+            <p className={styles.feedback__person}>Татьяна Ивановна, учитель школы №42</p>
+          </div>
         </section>
 
         {/* Наша команда */}
         <section id="team" className={`${styles.team} mb-16 md:mb-32`}>
           <div className="container mx-auto flex flex-col px-4 py-16 md:py-32 text-white">
             <h2>КОМАНДА А2Б:</h2>
-            {teamAchivments.map((text) => (
-              <div className={`${styles.team__achivment} mt-8 lg:mt-12 py-12 px-8 lg:px-24 text-black bg-white`}>{text}</div>
+            {teamAchivments.map((text, index) => (
+              <div className={`${styles.team__achivment} mt-8 lg:mt-12 py-12 px-8 lg:px-24 text-black bg-white`} key={index}>
+                {text}
+              </div>
             ))}
           </div>
         </section>

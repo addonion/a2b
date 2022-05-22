@@ -5,17 +5,27 @@
 /* Шрифты */
 @font-face {
   font-family: "Mabry Pro";
-  src: url("/fonts/MabryProBold.woff2") format("woff2"), url("/fonts/OpenSans-Regular.woff") format("woff");
+  src: url("/fonts/MabryProBold.woff2") format("woff2"), url("/fonts/MabryProBold.woff.woff") format("woff");
   font-weight: 700;
   font-style: bold;
   font-display: swap;
 }
-
-body {
-  font-size: 16px;
+@font-face {
+  font-family: "Mabry Pro Light";
+  src: url("/fonts/MabryProLight.woff2") format("woff2"), url("/fonts/MabryProLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
-h1, h2, h3 {
+body {
+  font-family: "Mabry Pro Light";
+  font-size: 20px;
+}
+
+h1,
+h2,
+h3 {
   font-family: "Mabry Pro";
 }
 h1 {
@@ -27,7 +37,6 @@ h1 {
   }
 }
 h2 {
-  font-family: "Mabry Pro";
   font-size: 1.5rem;
   line-height: 2rem;
 
