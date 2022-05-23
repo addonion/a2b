@@ -103,14 +103,23 @@ const Home: NextPage = () => {
         <section id="contacts" className="container mx-auto grid md:grid-cols-2 gap-4 px-4">
           <div className="my-auto pb-4 md:pb-40 lg:pb-96">
             <h2 className="mb-2">КОНТАКТЫ:</h2>
-            <p>
+            <p className="mb-1">
               <Link href="tel:+79194886676">
-                <a>+7 (919) 488-66-76</a>
+                <a className="text-blue-600 underline hover:text-blue-700 hover:no-underline">+7 (919) 488-66-76</a>
               </Link>
                — Анастасия,
             </p>
-            <p>+7 (951) 942-82-85 — Лейла,</p>
-            <p>art2.business@yandex.ru</p>
+            <p className="mb-1">
+              <Link href="tel:+79519428285">
+                <a className="text-blue-600 underline hover:text-blue-700 hover:no-underline">+7 (951) 942-82-85</a>
+              </Link>
+               — Лейла,
+            </p>
+            <p>
+              <Link href="mailto:art2.business@yandex.ru">
+                <a className="text-blue-600 underline hover:text-blue-700 hover:no-underline">art2.business@yandex.ru</a>
+              </Link>
+            </p>
           </div>
           <div className={styles.contacts__pic}>
             <div className="pb-3">
