@@ -75,7 +75,7 @@ const Home: NextPage = () => {
         <section className={`${styles.feedback} container mx-auto px-4 py-16 md:py-32 md:grid md:grid-cols-3 md:gap-10 lg:gap-32`}>
           <div className="w-1/2 mb-8 md:w-full md:col-span-1 md:mb-0">
             <div>
-              <Image src={feedbackPic} width={426} height={535} layout="responsive" placeholder="blur" alt="Татьяна Ивановна, учитель школы №42" />
+              <Image src={feedbackPic} width={426} height={535} layout="responsive" placeholder="blur" alt="Юлия, директор общеобразовательной школы" />
             </div>
           </div>
           <div className="col-span-3 md:col-span-2 my-auto">
@@ -83,7 +83,7 @@ const Home: NextPage = () => {
               «Мы проходили тимбилдинг с коллегами-учителями, после этого атмосфера в коллектисе стала просто чудесной! Я знаю, что могу положиться на своих товарищей по работе и могу поделиться с ними своими
               переживаниями об учениках»
             </p>
-            <p className={styles.feedback__person}>Татьяна Ивановна, учитель школы №42</p>
+            <p className={styles.feedback__person}>Юлия, директор общеобразовательной школы</p>
           </div>
         </section>
 
