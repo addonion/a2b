@@ -13,14 +13,39 @@
 .price {
   background-color: #23a094;
   color: #fff;
+  &__list {
+    font-family: "Mabry Pro";
+    font-size: 1.5rem;
+  }
+  &__more li {
+    &::before {
+      content: " – ";
+      position: relative;
+      top: -0.15rem;
+    }
+  }
 }
 
 .feedback {
   &__text {
     font-family: "Mabry Pro";
-    font-size: 2rem;
+    font-size: 1.5rem;
     @media (max-width: 767.98px) {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+    }
+    &::before {
+      content: "«";
+      position: absolute;
+      margin-left: -4rem;
+      margin-top: -2rem;
+      font-size: 4rem;
+    }
+    &::after {
+      content: "»";
+      position: absolute;
+      padding-left: 2rem;
+      margin-top: -2rem;
+      font-size: 4rem;
     }
   }
 }
@@ -29,7 +54,6 @@
   background-color: #000;
   &__achivment {
     filter: drop-shadow(10px 10px 0px #ffc900);
-    font-family: "Mabry Pro Light";
     font-size: 1.5rem;
     @media (max-width: 767.98px) {
       font-size: 1rem;
