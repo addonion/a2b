@@ -5,7 +5,7 @@ import Image from "next/image";
 // Images
 import more1 from "../images/more1.png";
 
-export default () => {
+const Form = () => {
   const [state, handleSubmit] = useForm("xgeddnbp");
 
   if (state.succeeded) {
@@ -37,3 +37,5 @@ export default () => {
     </form>
   );
 };
+
+export default Form;
