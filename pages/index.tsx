@@ -7,7 +7,6 @@ import styles from "../styles/Main.module.scss";
 
 // Images
 import heroPic from "../images/hero.png";
-import heroPicMobile from "../images/hero--mobile.png";
 import teambuildingPic from "../images/teambuilding.png";
 import feedbackPic from "../images/feedback.png";
 import contactsPic from "../images/contacts.png";
@@ -66,6 +65,19 @@ const Home: NextPage = () => {
             <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
           </div>
           <h2 className="mt-10">ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ</h2>
+        </section>
+
+        {/* Цена */}
+        <section id="price" className={`${styles.price} `}>
+          <div className="container mx-auto flex flex-col px-4 py-32 md:py-64">
+            <h2>ЦЕНА:</h2>
+            <ul>
+              <li>Продолжительность: 1,5 — 2 часа;</li>
+              <li>Количество участников: до 30 человек;</li>
+              <li>Место: ваш офис или коворкинг в центре города;</li>
+              <li>Цена: 1000 с человека + (опционально) аренда помещения.</li>
+            </ul>
+          </div>
         </section>
 
         {/* Отзыв */}
