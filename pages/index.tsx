@@ -44,9 +44,6 @@ const Home: NextPage = () => {
               <div className="hidden md:block">
                 <Image src={heroPic} width={1504} height={657} layout="responsive" priority={true} placeholder="blur" alt="Art2Buisness" />
               </div>
-              <div className="md:hidden">
-                <Image src={heroPicMobile} width={100} height={100} priority={true} placeholder="blur" alt="Art2Buisness Logo" />
-              </div>
               <h1 className="w-full xl:w-5/6 mt-5 md:mt-10 xl:mt-16">Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством</h1>
             </div>
           </div>
