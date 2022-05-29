@@ -66,7 +66,7 @@ const Home: NextPage = () => {
         {/* ТИМБИЛДИНГ */}
         <section id="teambuilding" className="container mx-auto flex flex-col px-4 py-32 md:py-64">
           <div>
-            <Image src={teambuildingPic} width={1504} height={601} placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
+            <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
           </div>
           <h2 className="mt-10">ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ</h2>
         </section>
