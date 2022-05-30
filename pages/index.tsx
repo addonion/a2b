@@ -9,6 +9,8 @@ import styles from "../styles/Main.module.scss";
 // Images
 import heroPic from "../images/hero.png";
 import teambuildingPic from "../images/teambuilding.png";
+import more2Pic from "../images/more2.png";
+import more3Pic from "../images/more3.png";
 import feedbackPic from "../images/feedback.png";
 import contactsPic from "../images/contacts.png";
 
@@ -65,16 +67,17 @@ const Home: NextPage = () => {
             <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
           </div>
           <h2 className="my-10">ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ</h2>
-          <div className="md:grid grid-cols-2 gap-12">
-            <div>
-              <h3>Что это?</h3>
+          <div className="md:grid grid-cols-2 gap-16">
+            <div className="flex flex-col">
+              <h3 className="mb-4">Что это?</h3>
               <ul>
                 <li>Мероприятие, где современное искусство становится инструментом общения и расслабления.</li>
                 <li>Повод заняться творчеством в комфортной обстановке.</li>
               </ul>
+              <Image src={more2Pic} width={300} height={288} layout="fixed" placeholder="blur" className="ml-auto" alt="Пьеро Мандзони, Дерьмо художника" />
             </div>
             <div>
-              <h3>Что мы будем делать?</h3>
+              <h3 className="mb-4">Что мы будем делать?</h3>
               <ul>
                 <li>Познакомимся с работами современных художников и научимся их интерпретировать</li>
                 <li>Вместе создадим концептуальный арт-объект или поп-ап выставку</li>
