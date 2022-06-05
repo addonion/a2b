@@ -40,8 +40,8 @@ const Home: NextPage = () => {
 
       <Layout>
         {/* Hero */}
-        <section className={`${styles.hero} py-32 xl:py-16`}>
-          <div className="container mx-auto flex flex-col h-full px-4">
+        <section className={`${styles.hero} py-32 lg:py-16`}>
+          <div className="container mx-auto flex flex-col h-full px-8 xl:px-4">
             <div className="my-auto md:mb-0">
               <Image src={heroPic} width={1504} height={657} layout="responsive" priority={true} placeholder="blur" alt="Art2Buisness" />
               <h1 className="w-full xl:w-5/6 mt-5 md:mt-10 xl:mt-16">Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством</h1>
@@ -51,10 +51,10 @@ const Home: NextPage = () => {
 
         {/* Навигация десктоп */}
         <nav className={`${styles.navigation} hidden lg:block`}>
-          <div className="container mx-auto flex">
+          <div className="container mx-auto flex px-8 xl:px-4">
             {menuItems.map(([title, url]) => (
               <Link href={url} key={url}>
-                <a className={`${styles.navigation__link} pl-4 pr-16 py-8`}>{title}</a>
+                <a className={`${styles.navigation__link} pr-16 py-4`}>{title}</a>
               </Link>
             ))}
           </div>
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
 
         {/* ТИМБИЛДИНГ */}
         <section id="teambuilding" className={`${styles.teambuilding} pt-16 md:pt-32 `}>
-          <div className="container mx-auto px-4 pb-16 md:pb-32">
+          <div className="container mx-auto px-8 xl:px-4 pb-8 md:pb-16">
             <div>
               <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
               <h2 className="my-10">ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ</h2>
@@ -70,19 +70,19 @@ const Home: NextPage = () => {
           </div>
 
           <div className={styles.teambuilding__about}>
-            <div className="container mx-auto py-16 md:py-32 relative z-10">
-              <div className="md:grid grid-cols-2 gap-32 px-4">
-                <div className="flex flex-col">
+            <div className="lg:container lg:mx-auto lg:py-16 relative z-10">
+              <div className="lg:grid grid-cols-2 gap-32 lg:px-8 xl:px-4">
+                <div className={`${styles.teambuilding__about__first} flex flex-col px-8 md:px-16 lg:px-0 py-16 lg:py-0`}>
                   <h3 className="mb-4">Что это?</h3>
-                  <ul className="mb-32">
+                  <ul className="mb-16 lg:mb-32">
                     <li className="mb-4">Мероприятие, где современное искусство становится инструментом общения и расслабления;</li>
                     <li>Повод заняться творчеством в комфортной обстановке.</li>
                   </ul>
                   <Image src={more2Pic} width={208} height={200} layout="fixed" placeholder="blur" alt="Пьеро Мандзони, Дерьмо художника" />
                 </div>
-                <div>
+                <div className={`${styles.teambuilding__about__second} flex flex-col px-8 md:px-16 lg:px-0 py-16 lg:py-0`}>
                   <h3 className="mb-4">Что мы будем делать?</h3>
-                  <ul className="mb-12">
+                  <ul className="mb-8 lg:mb-12">
                     <li className="mb-4">Познакомимся с работами современных художников и научимся их интерпретировать;</li>
                     <li>Вместе создадим концептуальный арт-объект или поп-ап выставку.</li>
                   </ul>
@@ -97,8 +97,8 @@ const Home: NextPage = () => {
 
         {/* Цена */}
         <section id="price" className={`${styles.price} `}>
-          <div className="container mx-auto lg:grid lg:grid-cols-2 lg:gap-32 px-4 py-32 lg:py-64">
-            <div>
+          <div className="container mx-auto lg:grid lg:grid-cols-3 xl:grid-cols-2 lg:gap-32 px-8 xl:px-4 py-16 md:py-32">
+            <div className="lg:col-span-2 xl:col-span-1">
               <h2 className="mb-4">ЦЕНА:</h2>
               <ul className={`${styles.price__list} mb-8`}>
                 <li>Продолжительность: 1,5 — 2 часа;</li>
@@ -106,23 +106,24 @@ const Home: NextPage = () => {
                 <li>Место: ваш офис или коворкинг в центре города;</li>
                 <li>Цена: 1000₽ с человека + (опционально) аренда помещения.</li>
               </ul>
-
               <Form />
             </div>
-            <div className="text-right">
-              <Image src={more4Pic} width={326} height={700} layout="fixed" placeholder="blur" alt="Пьеро Мандзони, Дерьмо художника" />
+            <div>
+              <div className="w-1/4 lg:w-full xl:w-1/2 ml-auto">
+                <Image src={more4Pic} width={326} height={700} layout="responsive" placeholder="blur" alt="Пьеро Мандзони, Дерьмо художника" />
+              </div>
             </div>
           </div>
         </section>
 
         {/* Отзыв */}
-        <section className={`${styles.feedback} container mx-auto px-4 py-16 md:py-32 md:grid md:grid-cols-3 md:gap-10 lg:gap-32`}>
-          <div className="w-1/2 mb-8 md:w-full md:col-span-1 md:mb-0">
+        <section className={`${styles.feedback} container mx-auto px-8 xl:px-4 py-16 md:py-32 lg:grid lg:grid-cols-3 lg:gap-16 xl:gap-32`}>
+          <div className="w-1/3 mb-8 lg:w-full lg:col-span-1 lg:mb-0">
             <div>
               <Image src={feedbackPic} width={426} height={535} layout="responsive" placeholder="blur" alt="Юлия, директор общеобразовательной школы" />
             </div>
           </div>
-          <div className="col-span-3 md:col-span-2 my-auto">
+          <div className="col-span-3 lg:col-span-2 my-auto">
             <div className={`${styles.feedback__text} mb-4`}>
               «У меня возник вопрос как поздравить свою административную команду с 8 марта. Девчонки рассказали что такое современное искусство, как можно его прочитывать и понимать. А совместное творчество вызвало
               эмоции отличного настроения. Было круто!»
@@ -132,8 +133,8 @@ const Home: NextPage = () => {
         </section>
 
         {/* Наша команда */}
-        <section id="team" className={`${styles.team} mb-16 md:mb-32`}>
-          <div className="container mx-auto flex flex-col px-4 py-16 md:py-32 text-white">
+        <section id="team" className={`${styles.team}`}>
+          <div className="container mx-auto flex flex-col px-8 xl:px-4 py-16 md:py-32 text-white">
             <h2>КОМАНДА А2Б:</h2>
             {teamAchivments.map((text, index) => (
               <div className={`${styles.team__achivment} mt-8 lg:mt-12 py-12 px-8 lg:px-32 xl:px-64 text-black bg-white`} key={index}>
@@ -144,8 +145,8 @@ const Home: NextPage = () => {
         </section>
 
         {/* КОНТАКТЫ */}
-        <section id="contacts" className="container mx-auto grid md:grid-cols-2 gap-4 px-4">
-          <div className="my-auto pb-4 md:pb-40 lg:pb-96">
+        <section id="contacts" className="container mx-auto grid lg:grid-cols-2 gap-4 px-8 xl:px-4 py-16 md:py-32">
+          <div className="my-auto pb-16">
             <h2 className="mb-4">КОНТАКТЫ:</h2>
             <p className="mb-1">
               <Link href="tel:+79194886676">
