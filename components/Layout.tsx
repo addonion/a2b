@@ -45,7 +45,7 @@ const Layout = ({ children }: Props) => {
       {/* /Yandex.Metrika counter */}
 
       {/* Dashly */}
-      <Script id="dashlyChat">
+      {/* <Script id="dashlyChat">
         {`
         function t(t, e) {
           return function () {
@@ -65,7 +65,7 @@ const Layout = ({ children }: Props) => {
         }
         dashly.connect("4842-bfab1138692de29ad813e25bb4e");
         `}
-      </Script>
+      </Script> */}
       {/* /Dashly */}
     </>
   );
