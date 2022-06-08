@@ -16,7 +16,7 @@ import feedbackPic from "../images/feedback.png";
 import contactsPic from "../images/contacts.png";
 
 const menuItems: [string, string][] = [
-  ["A2B", "/"],
+  ["a2b", "/"],
   ["Тимбилдинг", "#teambuilding"],
   ["Цена", "#price"],
   ["Наша команда", "#team"],
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
           <div className="container mx-auto px-8 xl:px-4 pb-8 md:pb-16">
             <div>
               <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
-              <h2 className="my-10">Тимбилдинг с современным искусством</h2>
+              <h2 className="h1 my-10">Тимбилдинг с современным искусством</h2>
             </div>
           </div>
 
