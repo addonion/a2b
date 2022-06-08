@@ -1,7 +1,8 @@
 {
   "name": "a2b",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -25,5 +26,8 @@
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24",
     "typescript": "4.6.3"
-  }
+  },
+  "description": "тимбилдинг с современным искусством",
+  "repository": "https://github.com/addonion/a2b.git",
+  "author": "addonion <addonion@gmail.com>"
 }

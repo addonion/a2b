@@ -16,6 +16,7 @@ import feedbackPic from "../images/feedback.png";
 import contactsPic from "../images/contacts.png";
 
 const menuItems: [string, string][] = [
+  ["A2B", "/"],
   ["Тимбилдинг", "#teambuilding"],
   ["Цена", "#price"],
   ["Наша команда", "#team"],
@@ -65,7 +66,7 @@ const Home: NextPage = () => {
           <div className="container mx-auto px-8 xl:px-4 pb-8 md:pb-16">
             <div>
               <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
-              <h2 className="my-10">ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ</h2>
+              <h2 className="my-10">Тимбилдинг с современным искусством</h2>
             </div>
           </div>
 
@@ -99,7 +100,7 @@ const Home: NextPage = () => {
         <section id="price" className={`${styles.price} `}>
           <div className="container mx-auto lg:grid lg:grid-cols-3 xl:grid-cols-2 lg:gap-32 px-8 xl:px-4 py-16 md:py-32">
             <div className="lg:col-span-2 xl:col-span-1">
-              <h2 className="mb-4">ЦЕНА:</h2>
+              <h2 className="mb-4">Цена:</h2>
               <ul className={`${styles.price__list} mb-8`}>
                 <li>Продолжительность: 1,5 — 2 часа;</li>
                 <li>Количество участников: до 30 человек;</li>
@@ -135,7 +136,7 @@ const Home: NextPage = () => {
         {/* Наша команда */}
         <section id="team" className={`${styles.team}`}>
           <div className="container mx-auto flex flex-col px-8 xl:px-4 py-16 md:py-32 text-white">
-            <h2>КОМАНДА А2Б:</h2>
+            <h2>Команда а2б:</h2>
             {teamAchivments.map((text, index) => (
               <div className={`${styles.team__achivment} mt-8 lg:mt-12 py-12 px-8 lg:px-32 xl:px-64 text-black bg-white`} key={index}>
                 {text}
@@ -147,7 +148,7 @@ const Home: NextPage = () => {
         {/* КОНТАКТЫ */}
         <section id="contacts" className="container mx-auto grid lg:grid-cols-2 gap-4 px-8 xl:px-4 py-16 md:py-32">
           <div className="my-auto pb-16">
-            <h2 className="mb-4">КОНТАКТЫ:</h2>
+            <h2 className="mb-4">Контакты:</h2>
             <p className="mb-1">
               <Link href="tel:+79194886676">
                 <a className="text-blue-600 underline hover:text-blue-700 hover:no-underline">+7 (919) 488-66-76</a>
@@ -165,7 +166,7 @@ const Home: NextPage = () => {
                 <a className="text-blue-600 underline hover:text-blue-700 hover:no-underline">art2.business@yandex.ru</a>
               </Link>
             </p>
-            <p>А еще мы:</p>
+            <h3>А еще мы:</h3>
             <ul className={styles.contacts__more}>
               <li>Разрабатываем креативные концепции для бизнеса;</li>
               <li>Проводим мероприятия;</li>
