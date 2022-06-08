@@ -12,13 +12,14 @@ const menuItems: [string, string][] = [
 
 export default function Nav(): JSX.Element {
   useEffect(() => {
-    console.log(document.getElementById("Navigation")?.offsetHeight);
     // Фиксируем при прокрутке навигацию
     let navigationPosition = document.getElementById("Navigation")!.offsetTop;
     window.addEventListener("scroll", function () {
       if (window.pageYOffset > navigationPosition) {
         document.getElementById("Navigation")?.classList.add(styles.sticky);
-        document.getElementById("Navigation")?.classList.remove("py-2");
+        if (window.pageYOffset > navigationPosition + 10) {
+          document.getElementById("Navigation")?.classList.remove("py-2");
+        }
       } else {
         document.getElementById("Navigation")?.classList.remove(styles.sticky);
         document.getElementById("Navigation")?.classList.add("py-2");
