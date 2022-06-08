@@ -18,9 +18,12 @@
   font-display: swap;
 }
 
-body {
+html {
   font-family: "Mabry Pro Light";
   font-size: 24px;
+  @media (max-width: 767.98px) {
+    font-size: 18px;
+  }
 }
 
 h1,
@@ -30,23 +33,21 @@ h2,
 h3,
 .h3 {
   font-family: "Mabry Pro";
-  // text-transform: uppercase;
 }
 h1,
 .h1 {
-  font-size: 2rem;
-  line-height: 2.5rem;
-  @media (min-width: 768px) {
-    font-size: 3rem;
-    line-height: 3.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  @media (min-width: 1024px) {
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 }
 h2,
 .h2 {
   font-size: 1.5rem;
   line-height: 2rem;
-
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     font-size: 2rem;
     line-height: 2.5rem;
   }
@@ -55,8 +56,7 @@ h3,
 .h3 {
   font-size: 1.3rem;
   line-height: 1.8rem;
-
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     font-size: 1.5rem;
     line-height: 2rem;
   }

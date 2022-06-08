@@ -13,6 +13,8 @@ import more2Pic from "../images/more2.png";
 import more3Pic from "../images/more3.png";
 import more4Pic from "../images/more4.png";
 import feedbackPic from "../images/feedback.png";
+import teamNastya from "../images/team_nastya.png";
+import teamLeila from "../images/team_leila.png";
 import contactsPic from "../images/contacts.png";
 
 const menuItems: [string, string][] = [
@@ -55,7 +57,7 @@ const Home: NextPage = () => {
           <div className="container mx-auto flex px-8 xl:px-4">
             {menuItems.map(([title, url]) => (
               <Link href={url} key={url}>
-                <a className={`${styles.navigation__link} pr-16 py-4`}>{title}</a>
+                <a className={`${styles.navigation__link} pr-16 py-4 last:pr-0`}>{title}</a>
               </Link>
             ))}
           </div>
@@ -119,7 +121,7 @@ const Home: NextPage = () => {
 
         {/* Отзыв */}
         <section className={`${styles.feedback} container mx-auto px-8 xl:px-4 py-16 md:py-32 lg:grid lg:grid-cols-3 lg:gap-16 xl:gap-32`}>
-          <div className="w-1/3 mb-8 lg:w-full lg:col-span-1 lg:mb-0">
+          <div className="w-2/3 mb-8 lg:w-full lg:col-span-1 lg:mb-0">
             <div>
               <Image src={feedbackPic} width={426} height={535} layout="responsive" placeholder="blur" alt="Юлия, директор общеобразовательной школы" />
             </div>
@@ -129,16 +131,26 @@ const Home: NextPage = () => {
               «У меня возник вопрос как поздравить свою административную команду с 8 марта. Девчонки рассказали что такое современное искусство, как можно его прочитывать и понимать. А совместное творчество вызвало
               эмоции отличного настроения. Было круто!»
             </div>
-            <p>Юлия, директор общеобразовательной школы</p>
+            <p className="text-gray-400">Юлия, директор общеобразовательной школы</p>
           </div>
         </section>
 
         {/* Наша команда */}
         <section id="team" className={`${styles.team}`}>
           <div className="container mx-auto flex flex-col px-8 xl:px-4 py-16 md:py-32 text-white">
-            <h2>Команда а2б:</h2>
+            <h2 className="mb-8">Команда а2б:</h2>
+
+            <div className="grid grid-cols-2 gap-16 xl:gap-32">
+              <div>
+                <Image src={teamNastya} width={663} height={668} layout="responsive" placeholder="blur" alt="Анастасия" />
+              </div>
+              <div>
+                <Image src={teamLeila} width={680} height={688} layout="responsive" placeholder="blur" alt="Анастасия" />
+              </div>
+            </div>
+
             {teamAchivments.map((text, index) => (
-              <div className={`${styles.team__achivment} mt-8 lg:mt-12 py-12 px-8 lg:px-32 xl:px-64 text-black bg-white`} key={index}>
+              <div className={`${styles.team__achivment} mt-8 lg:mt-12 p-6 md:py-12 md:px-8 lg:px-32 xl:px-64 text-black bg-white`} key={index}>
                 {text}
               </div>
             ))}
