@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Layout from "../components/Layout";
+import Nav from "../components/Nav";
 import Form from "../components/Form";
 import Head from "next/head";
 import Link from "next/link";
@@ -17,13 +18,6 @@ import teamNastya from "../images/team_nastya.png";
 import teamLeila from "../images/team_leila.png";
 import contactsPic from "../images/contacts.png";
 
-const menuItems: [string, string][] = [
-  ["a2b", "/"],
-  ["Тимбилдинг", "#teambuilding"],
-  ["Цена", "#price"],
-  ["Наша команда", "#team"],
-  ["Контакты", "#contacts"],
-];
 const teamAchivments: string[] = [
   "Арт-медиаторы и специалисты образовательного отдела музея современного искусства PERMM, преподаватели школы дизайна «Точка»;",
   "Курировали масштабные арт-резиденции в Перми и Пермском крае, Владикавказе, Полярном, Самаре и даже на закрытой территории заповедника «Басеги»;",
@@ -53,21 +47,13 @@ const Home: NextPage = () => {
         </section>
 
         {/* Навигация десктоп */}
-        <nav className={`${styles.navigation} hidden lg:block`}>
-          <div className="container mx-auto flex px-8 xl:px-4">
-            {menuItems.map(([title, url]) => (
-              <Link href={url} key={url}>
-                <a className={`${styles.navigation__link} pr-16 py-4 last:pr-0`}>{title}</a>
-              </Link>
-            ))}
-          </div>
-        </nav>
+        <Nav />
 
         {/* ТИМБИЛДИНГ */}
         <section id="teambuilding" className={`${styles.teambuilding} pt-16 md:pt-32 `}>
           <div className="container mx-auto px-8 xl:px-4 pb-8 md:pb-16">
             <div>
-              <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
+              <Image src={teambuildingPic} width={1504} height={601} layout="responsive" placeholder="blur" className="z-50" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
               <h2 className="h1 my-10">Тимбилдинг с современным искусством</h2>
             </div>
           </div>
