@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Проведение тимбилдинга в Перми — Art2Buisness</title>
+        <title>Проведение тимбилдинга в Перми — Art2Business</title>
         <meta name="description" content="Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством" />
         <link rel="canonical" href="https://www.art2business.ru/" />
       </Head>
