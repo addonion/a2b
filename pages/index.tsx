@@ -16,6 +16,7 @@ const GET_SEO = gql`
         title
         description
       }
+      title
     }
   }
 `;
@@ -60,7 +61,7 @@ const Home: NextPage = () => {
           <div className="container mx-auto flex flex-col h-full px-8 xl:px-4">
             <div className="my-auto md:mb-0">
               <Image src={heroPic} width={1504} height={657} layout="responsive" priority={true} placeholder="blur" alt="Art2Buisness" />
-              <h1 className="w-full xl:w-5/6 mt-5 md:mt-10 xl:mt-16">Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством</h1>
+              <h1 className="w-full xl:w-5/6 mt-5 md:mt-10 xl:mt-16">{data.mainPage.title}</h1>
             </div>
           </div>
         </section>
