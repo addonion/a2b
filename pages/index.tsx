@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useQuery, gql } from "@apollo/client";
 import Layout from "../components/Layout";
 import Nav from "../components/Nav";
 import Form from "../components/Form";
@@ -6,6 +7,18 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Main.module.scss";
+
+const GET_SEO = gql`
+  query MainPage {
+    mainPage(where: { id: "cl59271xi8gpq0erras94gl6p" }) {
+      id
+      seo {
+        title
+        description
+      }
+    }
+  }
+`;
 
 // Images
 import heroPic from "../images/hero.png";
@@ -27,11 +40,17 @@ const teamAchivments: string[] = [
 ];
 
 const Home: NextPage = () => {
+  const { loading, data } = useQuery(GET_SEO);
+
+  if (loading) {
+    return <></>;
+  }
+
   return (
     <>
       <Head>
-        <title>Проведение тимбилдинга в Перми — Art2Business</title>
-        <meta name="description" content="Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством" />
+        <title>{data.mainPage.seo.title}</title>
+        <meta name="description" content={data.mainPage.seo.description} />
         <link rel="canonical" href="https://www.art2business.ru/" />
       </Head>
 
