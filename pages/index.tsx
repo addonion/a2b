@@ -43,7 +43,7 @@ const teamAchivments: string[] = [
 const Home: NextPage = () => {
   const { loading, data } = useQuery(GET_SEO);
 
-  if (!loading) {
+  if (loading) {
     return (
       <>
         <Head>
