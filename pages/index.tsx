@@ -43,8 +43,16 @@ const teamAchivments: string[] = [
 const Home: NextPage = () => {
   const { loading, data } = useQuery(GET_SEO);
 
-  if (loading) {
-    return <></>;
+  if (!loading) {
+    return (
+      <>
+        <Head>
+          <title>Проведение тимбилдинга в Перми — Art2Business</title>
+          <meta name="description" content="Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством!" />
+          <link rel="canonical" href="https://www.art2business.ru/" />
+        </Head>
+      </>
+    );
   }
 
   return (
