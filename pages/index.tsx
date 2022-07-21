@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { useQuery, gql } from "@apollo/client";
 import Layout from "../components/Layout";
 import Nav from "../components/Nav";
 import Form from "../components/Form";
@@ -7,19 +6,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Main.module.scss";
-
-const GET_SEO = gql`
-  query MainPage {
-    mainPage(where: { id: "cl59271xi8gpq0erras94gl6p" }) {
-      id
-      seo {
-        title
-        description
-      }
-      title
-    }
-  }
-`;
 
 // Images
 import heroPic from "../images/hero.png";
@@ -41,25 +27,11 @@ const teamAchivments: string[] = [
 ];
 
 const Home: NextPage = () => {
-  const { loading, data } = useQuery(GET_SEO);
-
-  if (loading) {
-    return (
-      <>
-        <Head>
-          <title>Проведение тимбилдинга в Перми — Art2Business</title>
-          <meta name="description" content="Мы создаем концепции, мероприятия и образовательные проекты, вдохновляясь современным искусством!" />
-          <link rel="canonical" href="https://www.art2business.ru/" />
-        </Head>
-      </>
-    );
-  }
-
   return (
     <>
       <Head>
-        <title>{data.mainPage.seo.title}</title>
-        <meta name="description" content={data.mainPage.seo.description} />
+        <title>Проведение тимбилдинга в Перми — Art2Business</title>
+        <meta name="description" content="Мы создаем концепции, мероприятия по тимбилдингу и образовательные проекты, вдохновляясь современным искусством!" />
         <link rel="canonical" href="https://www.art2business.ru/" />
       </Head>
 
@@ -69,7 +41,7 @@ const Home: NextPage = () => {
           <div className="container mx-auto flex flex-col h-full px-8 xl:px-4">
             <div className="my-auto md:mb-0">
               <Image src={heroPic} width={1504} height={657} layout="responsive" priority={true} placeholder="blur" alt="Art2Buisness" />
-              <h1 className="w-full xl:w-5/6 mt-5 md:mt-10 xl:mt-16">Мы создаем концепции, мероприятия по тимбилдингу и образовательные проекты, вдохновляясь современным искусством</h1>
+              <h1 className="w-full mt-5 md:mt-10 xl:mt-16">Мы создаем концепции, мероприятия по тимбилдингу и образовательные проекты, вдохновляясь современным искусством</h1>
             </div>
           </div>
         </section>
