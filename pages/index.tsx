@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { GraphQLClient, gql } from "graphql-request";
 import Layout from "../components/Layout";
 import Nav from "../components/Nav";
 import Form from "../components/Form";
@@ -26,12 +27,12 @@ const teamAchivments: string[] = [
   "Сотрудничаем с современными художниками, дизайнерами, кураторами и предпринимателями.",
 ];
 
-const Home: NextPage = () => {
+const Home: NextPage<IMain> = ({ mainPage }: IMain) => {
   return (
     <>
       <Head>
-        <title>Проведение тимбилдинга в Перми — Art2Business</title>
-        <meta name="description" content="Мы создаем концепции, мероприятия по тимбилдингу и образовательные проекты, вдохновляясь современным искусством!" />
+        <title>{mainPage.seo.title}</title>
+        <meta name="description" content={mainPage.seo.description} />
         <link rel="canonical" href="https://www.art2business.ru/" />
       </Head>
 
@@ -41,7 +42,7 @@ const Home: NextPage = () => {
           <div className="container mx-auto flex flex-col h-full px-8 xl:px-4">
             <div className="my-auto md:mb-0">
               <Image src={heroPic} width={1504} height={657} layout="responsive" priority={true} placeholder="blur" alt="Art2Buisness" />
-              <h1 className="w-full mt-5 md:mt-10 xl:mt-16">Мы создаем концепции, мероприятия по тимбилдингу и образовательные проекты, вдохновляясь современным искусством</h1>
+              <h1 className="w-full mt-5 md:mt-10 xl:mt-16">{mainPage.title}</h1>
             </div>
           </div>
         </section>
@@ -63,18 +64,12 @@ const Home: NextPage = () => {
               <div className="lg:grid grid-cols-2 gap-32 lg:px-8 xl:px-4">
                 <div className={`${styles.teambuilding__about__first} flex flex-col px-8 md:px-16 lg:px-0 py-16 lg:py-0`}>
                   <h3 className="mb-4">Что это?</h3>
-                  <ul className="mb-16 lg:mb-32">
-                    <li className="mb-4">Мероприятие, где современное искусство становится инструментом общения и расслабления;</li>
-                    <li>Повод заняться творчеством в комфортной обстановке.</li>
-                  </ul>
+                  <div className="mb-16 lg:mb-32" dangerouslySetInnerHTML={{ __html: mainPage.what.html }} />
                   <Image src={more2Pic} width={208} height={200} layout="fixed" placeholder="blur" alt="Пьеро Мандзони, Дерьмо художника" />
                 </div>
                 <div className={`${styles.teambuilding__about__second} flex flex-col px-8 md:px-16 lg:px-0 py-16 lg:py-0`}>
                   <h3 className="mb-4">Что мы будем делать?</h3>
-                  <ul className="mb-8 lg:mb-12">
-                    <li className="mb-4">Познакомимся с работами современных художников и научимся их интерпретировать;</li>
-                    <li>Вместе создадим концептуальный арт-объект или поп-ап выставку.</li>
-                  </ul>
+                  <div className="mb-8 lg:mb-12" dangerouslySetInnerHTML={{ __html: mainPage.process.html }} />
                   <div className="text-right">
                     <Image src={more3Pic} width={161} height={288} layout="fixed" placeholder="blur" alt="Пьеро Мандзони, Дерьмо художника" />
                   </div>
@@ -182,5 +177,50 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const hygraph = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/cl591wrec5kb801um1xjoe5g8/master");
+
+  const { mainPage } = await hygraph.request(
+    gql`
+      {
+        mainPage(where: { id: "cl59271xi8gpq0erras94gl6p" }) {
+          seo {
+            title
+            description
+          }
+          title
+          what {
+            html
+          }
+          process {
+            html
+          }
+        }
+      }
+    `
+  );
+
+  return {
+    props: {
+      mainPage,
+    },
+  };
+}
+
+type TRithText = {
+  html: string;
+};
+interface IMain {
+  mainPage: {
+    seo: {
+      title: string;
+      description: string;
+    };
+    title: string;
+    what: TRithText;
+    process: TRithText;
+  };
+}
 
 export default Home;
