@@ -2,14 +2,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Nav.module.scss";
 
-const menuItems: [string, string][] = [
-  ["a2b", "/"],
-  ["Тимбилдинг", "#teambuilding"],
-  ["Цена", "#price"],
-  ["Наша команда", "#team"],
-  ["Контакты", "#contacts"],
-];
-
 export default function Nav(): JSX.Element {
   useEffect(() => {
     // Фиксируем при прокрутке навигацию
@@ -17,7 +9,7 @@ export default function Nav(): JSX.Element {
     window.addEventListener("scroll", function () {
       if (window.pageYOffset > navigationPosition) {
         document.getElementById("Navigation")?.classList.add(styles.sticky);
-        if (window.pageYOffset > navigationPosition + 10) {
+        if (window.pageYOffset > navigationPosition + 20) {
           document.getElementById("Navigation")?.classList.remove("py-2");
         }
       } else {
@@ -30,9 +22,15 @@ export default function Nav(): JSX.Element {
   return (
     <nav id="Navigation" className={`${styles.navigation} hidden lg:block py-2`}>
       <div className="container mx-auto flex px-8 xl:px-4">
-        {menuItems.map(([title, url]) => (
-          <Link href={url} key={url}>
-            <a className={`${styles.navigation__link} pr-16 py-2 last:pr-0`}>{title}</a>
+        {[
+          ["a2b", "/"],
+          ["Тимбилдинг", "#teambuilding"],
+          ["Цена", "#price"],
+          ["Наша команда", "#team"],
+          ["Контакты", "#contacts"],
+        ].map(([title, url]) => (
+          <Link href={url} key={url} className={`${styles.navigation__link} pr-16 py-2 last:pr-0`}>
+            {title}
           </Link>
         ))}
       </div>

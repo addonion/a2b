@@ -1,0 +1,8 @@
+.gallery {
+  overflow-y: hidden;
+
+  height: 70vh;
+  & > div {
+    width: 8000px !important;
+  }
+}
