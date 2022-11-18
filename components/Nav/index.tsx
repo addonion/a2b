@@ -17,17 +17,18 @@ export default function Nav(): JSX.Element {
         document.getElementById("Navigation")?.classList.add("py-2");
       }
     });
-  });
+  }, []);
 
   return (
     <nav id="Navigation" className={`${styles.navigation} hidden lg:block py-2`}>
       <div className="container mx-auto flex px-8 xl:px-4">
         {[
           ["a2b", "/"],
-          ["Тимбилдинг", "#teambuilding"],
-          ["Цена", "#price"],
-          ["Наша команда", "#team"],
-          ["Контакты", "#contacts"],
+          ["Тьюторство", "/tutoring/"],
+          ["Тимбилдинг", "/team-building/"],
+          ["Цена", "/#price"],
+          ["Наша команда", "/#team"],
+          ["Контакты", "/#contacts"],
         ].map(([title, url]) => (
           <Link href={url} key={url} className={`${styles.navigation__link} pr-16 py-2 last:pr-0`}>
             {title}

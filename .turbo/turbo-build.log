@@ -1,0 +1,27 @@
+
+> a2b@0.1.5 build /Users/sonyblack/Public/a2b
+> next build
+
+info  - Linting and checking validity of types...
+info  - Creating an optimized production build...
+info  - Compiled successfully
+info  - Collecting page data...
+info  - Generating static pages (0/3)
+info  - Generating static pages (3/3)
+info  - Finalizing page optimization...
+
+Route (pages)                              Size     First Load JS
+┌ ● / (510 ms)                             14.6 kB        88.8 kB
+├   └ css/d63ee59f1b867e54.css             680 B
+├   /_app                                  0 B            74.1 kB
+└ ○ /404                                   182 B          74.3 kB
++ First Load JS shared by all              76.8 kB
+  ├ chunks/framework-8d78bf989db74c8f.js   45.4 kB
+  ├ chunks/main-90d5294688fa2b22.js        26.7 kB
+  ├ chunks/pages/_app-bb3b106ec2c2afa6.js  303 B
+  ├ chunks/webpack-df1c782f1dedae54.js     1.74 kB
+  └ css/6b247bbb4e479970.css               2.65 kB
+
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
+

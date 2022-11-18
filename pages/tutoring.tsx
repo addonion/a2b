@@ -34,16 +34,6 @@ const Home: NextPage<IMain> = ({ mainPage }: IMain) => {
       </Head>
 
       <Layout>
-        {/* Hero */}
-        <section className={`${styles.hero} py-32 lg:py-16`}>
-          <div className="container mx-auto flex flex-col h-full px-8 xl:px-4">
-            <div className="my-auto md:mb-0">
-              <Image src={heroPic} width={1504} height={657} priority={true} placeholder="blur" alt="Art2Buisness" />
-              <h1 className="w-full mt-5 md:mt-10 xl:mt-16">{mainPage.title}</h1>
-            </div>
-          </div>
-        </section>
-
         {/* ТИМБИЛДИНГ */}
         <section id="teambuilding" className={`${styles.teambuilding} pt-16 md:pt-32 `}>
           <div className="container mx-auto px-8 xl:px-4 pb-8 md:pb-16">
@@ -109,75 +99,6 @@ const Home: NextPage<IMain> = ({ mainPage }: IMain) => {
               эмоции отличного настроения. Было круто!»
             </div>
             <p className="text-gray-400">Юлия, директор общеобразовательной школы</p>
-          </div>
-        </section>
-
-        {/* Наша команда */}
-        <section id="team" className={`${styles.team}`}>
-          <div className="container mx-auto flex flex-col px-8 xl:px-4 py-16 md:py-32 text-white">
-            <h2 className="mb-8">Команда а2б:</h2>
-
-            <div className="grid grid-cols-2 gap-16 xl:gap-32">
-              <div>
-                <Image src={teamNastya} width={663} height={668} placeholder="blur" alt="Анастасия" />
-              </div>
-              <div>
-                <Image src={teamLeila} width={680} height={688} placeholder="blur" alt="Анастасия" />
-              </div>
-            </div>
-
-            {[
-              "Арт-медиаторы и специалисты образовательного отдела музея современного искусства PERMM, преподаватели школы дизайна «Точка»;",
-              "Курировали масштабные арт-резиденции в Перми и Пермском крае, Владикавказе, Полярном, Самаре и даже на закрытой территории заповедника «Басеги»;",
-              "Наши проекты входят в топ-10 лучших проектов России по работе с аудиторией (2021 г.), мы победители международного конкурса арт-объектов «ВолгаФеста-2021». Выиграли грантовый конкурс от компании «Северсталь»;",
-              "Участники школы медиации от Уральской индустриальной биеннале, программы по цифровому проектированию от Музея Москвы, всероссийского музейного форума в Санкт-Петербурге;",
-              "Сотрудничаем с современными художниками, дизайнерами, кураторами и предпринимателями.",
-            ].map((text, index) => (
-              <div className={`${styles.team__achivment} mt-8 lg:mt-12 p-6 md:py-12 md:px-8 lg:px-32 xl:px-64 text-black bg-white`} key={index}>
-                {text}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Фото */}
-        <section className="container mx-auto px-8 xl:px-4 py-16 md:py-32">
-          <Gallery />
-        </section>
-
-        {/* КОНТАКТЫ */}
-        <section id="contacts" className="container mx-auto grid lg:grid-cols-2 gap-4 px-8 xl:px-4 py-16 md:py-32">
-          <div className="my-auto pb-16">
-            <h2 className="mb-4">Контакты:</h2>
-            <p className="mb-1">
-              <Link href="tel:+79194886676" className="text-blue-600 underline hover:text-blue-700 hover:no-underline">
-                +7 (919) 488-66-76
-              </Link>
-               — Анастасия,
-            </p>
-            <p className="mb-1">
-              <Link href="tel:+79519428285" className="text-blue-600 underline hover:text-blue-700 hover:no-underline">
-                +7 (951) 942-82-85
-              </Link>
-               — Лейла,
-            </p>
-            <p className="mb-12">
-              <Link href="mailto:art2.business@yandex.ru" className="text-blue-600 underline hover:text-blue-700 hover:no-underline">
-                art2.business@yandex.ru
-              </Link>
-            </p>
-            <h3>А еще мы:</h3>
-            <ul className={styles.contacts__more}>
-              <li>Разрабатываем креативные концепции для бизнеса;</li>
-              <li>Проводим мероприятия;</li>
-              <li>Тренируем креативное мышление;</li>
-              <li>Помогаем понять современное искусство.</li>
-            </ul>
-          </div>
-          <div className={styles.contacts__pic}>
-            <div className="pb-3">
-              <Image src={contactsPic} width={744} height={1062} placeholder="blur" alt="КОНТАКТЫ" />
-            </div>
           </div>
         </section>
       </Layout>

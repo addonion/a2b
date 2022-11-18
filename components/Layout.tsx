@@ -1,14 +1,18 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import Script from "next/script";
+import Nav from "./Nav";
+import localFont from "@next/font/local";
 
 type Props = {
   children?: ReactNode;
 };
 
+const mabry = localFont({ src: "../public/fonts/MabryProBold.woff2" });
+
 const Layout = ({ children }: Props) => {
   return (
-    <>
+    <div className={mabry.className}>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -26,6 +30,9 @@ const Layout = ({ children }: Props) => {
         <meta name="theme-color" content="#ffffff" />
         {/*  /Favicon */}
       </Head>
+
+      {/* Навигация десктоп */}
+      <Nav />
 
       {children}
 
@@ -67,7 +74,7 @@ const Layout = ({ children }: Props) => {
         `}
       </Script> */}
       {/* /Dashly */}
-    </>
+    </div>
   );
 };
 
