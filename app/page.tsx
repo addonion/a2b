@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 import { GraphQLClient, gql } from "graphql-request";
-import Layout from "../components/Layout";
-import Nav from "../components/Nav";
 import Gallery from "../components/Gallery";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
@@ -33,7 +31,7 @@ const Home: NextPage<IMain> = ({ mainPage }: IMain) => {
         <link rel="canonical" href="https://www.art2business.ru/" />
       </Head>
 
-      <Layout>
+      <>
         {/* Hero */}
         <section className={`${styles.hero} py-32 lg:py-16`}>
           <div className="container mx-auto flex flex-col h-full px-8 xl:px-4">
@@ -180,7 +178,7 @@ const Home: NextPage<IMain> = ({ mainPage }: IMain) => {
             </div>
           </div>
         </section>
-      </Layout>
+      </>
     </>
   );
 };

@@ -8,7 +8,7 @@ type Props = {
   children?: ReactNode;
 };
 
-const mabry = localFont({ src: "../public/fonts/MabryProBold.woff2" });
+const mabry = localFont({ src: "../public/fonts/MabryPro.woff2" });
 
 const Layout = ({ children }: Props) => {
   return (

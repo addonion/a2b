@@ -2,25 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Шрифты */
-// @font-face {
-//   font-family: "Mabry Pro";
-//   src: url("/fonts/MabryProBold.woff2") format("woff2"), url("/fonts/MabryProBold.woff.woff") format("woff");
-//   font-weight: 700;
-//   font-style: bold;
-//   font-display: swap;
-// }
-// @font-face {
-//   font-family: "Mabry Pro Light";
-//   src: url("/fonts/MabryProLight.woff2") format("woff2"), url("/fonts/MabryProLight.woff") format("woff");
-//   font-weight: 300;
-//   font-style: normal;
-//   font-display: swap;
-// }
-
 html {
   font-family: "Mabry Pro Light";
   font-size: 24px;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
   @media (max-width: 767.98px) {
     font-size: 18px;
   }
