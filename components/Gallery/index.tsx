@@ -17,7 +17,7 @@ export default function Gallery(): JSX.Element {
     <section>
       <div className={styles.gallery}>
         <div className="flex">
-          <div className="pl-8 xl:pl-4">
+          <div>
             <Image src={photo4} placeholder="blur" alt="Фото 4" height={800} />
           </div>
 
@@ -49,7 +49,7 @@ export default function Gallery(): JSX.Element {
             <Image src={photo9} placeholder="blur" alt="Фото 9" height={800} />
           </div>
 
-          <div className="pr-8 xl:pr-4 ">
+          <div>
             <Image src={photo2} placeholder="blur" alt="Фото 2" height={800} />
           </div>
         </div>

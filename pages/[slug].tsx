@@ -1,5 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
-import type { NextPage, GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from "next";
+import type { NextPage, GetStaticPaths } from "next";
 import Layout from "../components/Layout";
 import Nav from "../components/Nav";
 import dynamic from "next/dynamic";
