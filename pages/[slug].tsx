@@ -1,5 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from "next";
 import Layout from "../components/Layout";
 import Nav from "../components/Nav";
 import dynamic from "next/dynamic";
@@ -120,7 +120,7 @@ const Page: NextPage<IPage> = ({ servicePage }: IPage) => {
   );
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const hygraph = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/cl591wrec5kb801um1xjoe5g8/master");
   const { servicePages } = await hygraph.request(
     gql`
@@ -137,9 +137,9 @@ export async function getStaticPaths() {
   }));
 
   return { paths, fallback: false };
-}
+};
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: IPages }) {
   const hygraph = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/cl591wrec5kb801um1xjoe5g8/master");
   const { servicePage } = await hygraph.request(
     gql`
