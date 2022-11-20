@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Nav.module.scss";
+import { gql, GraphQLClient } from "graphql-request";
 
-export default function Nav(): JSX.Element {
+const Nav = (): JSX.Element => {
   useEffect(() => {
     // Фиксируем при прокрутке навигацию
     let navigationPosition = document.getElementById("Navigation")!.offsetTop;
@@ -24,10 +25,10 @@ export default function Nav(): JSX.Element {
       <div className="container mx-auto flex px-8 xl:px-4">
         {[
           ["a2b", "/"],
-          ["Тимбилдинг", "#teambuilding"],
-          ["Цена", "#price"],
-          ["Наша команда", "#team"],
-          ["Контакты", "#contacts"],
+          ["Тьюторство", "/tutering/"],
+          ["Тимбилдинг", "/team-building/"],
+          ["Наша команда", "/#team"],
+          ["Контакты", "/#contacts"],
         ].map(([title, url]) => (
           <Link href={url} key={url} className={`${styles.navigation__link} pr-16 py-2 last:pr-0`}>
             {title}
@@ -36,4 +37,6 @@ export default function Nav(): JSX.Element {
       </div>
     </nav>
   );
-}
+};
+
+export default Nav;

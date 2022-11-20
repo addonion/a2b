@@ -1,8 +1,26 @@
 .gallery {
-  overflow-y: hidden;
-
-  height: 70vh;
-  & > div {
-    width: 8000px !important;
+  overflow-y: scroll;
+  div {
+    width: max-content;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  @media (orientation: landscape) {
+    div {
+      height: 90vh;
+      img {
+        height: 90vh;
+      }
+    }
+  }
+  @media (orientation: portrait) {
+    div {
+      height: 40vh;
+      img {
+        height: 40vh;
+      }
+    }
   }
 }

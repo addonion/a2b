@@ -61,3 +61,19 @@ h3,
     line-height: 2rem;
   }
 }
+
+@media (min-width: 1024px) {
+  .service__title {
+    font-size: 4rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .service__title {
+    font-size: 5rem;
+    line-height: 4rem;
+    margin-bottom: 1rem;
+  }
+}
