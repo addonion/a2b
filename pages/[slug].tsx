@@ -1,32 +1,46 @@
+import { gql, GraphQLClient } from "graphql-request";
 import type { NextPage } from "next";
-import { GraphQLClient, gql } from "graphql-request";
 import Layout from "../components/Layout";
 import Nav from "../components/Nav";
-import Gallery from "../components/Gallery";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 const DynamicForm = dynamic(() => import("../components/Form"), {
   suspense: true,
 });
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Main.module.scss";
 import Typograf from "typograf";
 const tp = new Typograf({ locale: ["ru", "en-US"] });
+tp.enableRule("ru/nbsp/*"); // Включить все правила
+
+type TRithText = {
+  html: string;
+};
+interface IPage {
+  servicePage: {
+    seo: {
+      title: string;
+      description: string;
+    };
+    title: string;
+    description: string;
+    what: TRithText;
+    how: TRithText;
+    price: TRithText;
+  };
+}
+interface IPages {
+  slug: string;
+}
 
 // Images
-import heroPic from "../images/hero.png";
-import teambuildingPic from "../images/teambuilding.png";
 import more2Pic from "../images/more2.png";
 import more3Pic from "../images/more3.png";
 import more4Pic from "../images/more4.png";
 import feedbackPic from "../images/feedback.png";
-import teamNastya from "../images/team_nastya.png";
-import teamLeila from "../images/team_leila.png";
-import contactsPic from "../images/contacts.png";
 
-const Home: NextPage<IPage> = ({ servicePage }: IPage) => {
+const Page: NextPage<IPage> = ({ servicePage }: IPage) => {
   return (
     <>
       <Head>
@@ -106,13 +120,31 @@ const Home: NextPage<IPage> = ({ servicePage }: IPage) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
   const hygraph = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/cl591wrec5kb801um1xjoe5g8/master");
+  const { servicePages } = await hygraph.request(
+    gql`
+      {
+        servicePages {
+          slug
+        }
+      }
+    `
+  );
 
+  const paths = servicePages.map((page: IPages) => ({
+    params: { slug: page.slug },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const hygraph = new GraphQLClient("https://api-eu-central-1.graphcms.com/v2/cl591wrec5kb801um1xjoe5g8/master");
   const { servicePage } = await hygraph.request(
     gql`
       {
-        servicePage(where: { id: "clamhkpomli1a0autyu1wws08" }) {
+        servicePage(where: { slug: "${params.slug}" }) {
           seo {
             title
             description
@@ -140,21 +172,4 @@ export async function getStaticProps() {
   };
 }
 
-type TRithText = {
-  html: string;
-};
-interface IPage {
-  servicePage: {
-    seo: {
-      title: string;
-      description: string;
-    };
-    title: string;
-    description: string;
-    what: TRithText;
-    how: TRithText;
-    price: TRithText;
-  };
-}
-
-export default Home;
+export default Page;
