@@ -26,6 +26,13 @@ html {
   }
 }
 
+.hamburger-react {
+  color: #000;
+}
+.hamburger-react[aria-expanded="true"] {
+  color: #fff;
+}
+
 h1,
 .h1,
 h2,
@@ -63,8 +70,14 @@ h3,
 }
 
 ul li {
-  list-style: disc;
-  margin-left: 1rem;
+  position: relative;
+  padding-left: 1rem;
+  &::before {
+    content: " – ";
+    position: absolute;
+    top: -0.15rem;
+    left: 0;
+  }
 }
 
 @media (min-width: 1024px) {

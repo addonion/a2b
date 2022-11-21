@@ -20,6 +20,22 @@ import feedbackPic from "../images/feedback.png";
 import teamNastya from "../images/team_nastya.png";
 import teamLeila from "../images/team_leila.png";
 
+type TRithText = {
+  html: string;
+};
+interface IMain {
+  data: {
+    mainPage: {
+      seo: {
+        title: string;
+        description: string;
+      };
+      title: string;
+    };
+    skillsTeam: { description: Array<string> };
+  };
+}
+
 function Home({ data }: IMain) {
   return (
     <>
@@ -45,7 +61,7 @@ function Home({ data }: IMain) {
 
         <div className="container mx-auto px-8 xl:px-4 py-8 md:py-16 xl:py-32">
           <div>
-            <Image src={teambuildingPic} width={1504} height={601} placeholder="blur" className="z-50" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
+            <Image src={teambuildingPic} width={1504} height={601} placeholder="blur" alt="ТИМБИЛДИНГ С СОВРЕМЕННЫМ ИСКУССТВОМ" />
           </div>
         </div>
 
@@ -105,22 +121,6 @@ export async function getStaticProps() {
     props: {
       data,
     },
-  };
-}
-
-type TRithText = {
-  html: string;
-};
-interface IMain {
-  data: {
-    mainPage: {
-      seo: {
-        title: string;
-        description: string;
-      };
-      title: string;
-    };
-    skillsTeam: { description: Array<string> };
   };
 }
 

@@ -55,7 +55,7 @@ const Page: NextPage<IPage> = ({ servicePage }: IPage) => {
 
         {/* ТИМБИЛДИНГ */}
         <section id="teambuilding" className={`${styles.teambuilding} pt-16 `}>
-          <div className="lg:container mx-auto px-16 xl:px-4 pb-8 md:pb-16">
+          <div className="lg:container mx-auto px-8 xl:px-4 pb-8 md:pb-16">
             <div className="my-10">
               <h1 className="service__title">{servicePage.title}</h1>
               <p>{servicePage.description}</p>

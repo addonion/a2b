@@ -86,11 +86,4 @@
   &__pic {
     filter: drop-shadow(10px 10px 0px #ff90e8);
   }
-  &__more li {
-    &::before {
-      content: " – ";
-      position: relative;
-      top: -0.15rem;
-    }
-  }
 }

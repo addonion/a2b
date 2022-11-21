@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Nav.module.scss";
-import { gql, GraphQLClient } from "graphql-request";
+import Hamburger from "hamburger-react";
 
 const Nav = (): JSX.Element => {
+  const [isOpen, setOpen] = useState(false);
+
   useEffect(() => {
     // Фиксируем при прокрутке навигацию
     let navigationPosition = document.getElementById("Navigation")!.offsetTop;
@@ -11,18 +13,24 @@ const Nav = (): JSX.Element => {
       if (window.pageYOffset > navigationPosition) {
         document.getElementById("Navigation")?.classList.add(styles.sticky);
         if (window.pageYOffset > navigationPosition + 20) {
-          document.getElementById("Navigation")?.classList.remove("py-2");
+          document.getElementById("Navigation")?.classList.remove("md:py-2");
         }
       } else {
         document.getElementById("Navigation")?.classList.remove(styles.sticky);
-        document.getElementById("Navigation")?.classList.add("py-2");
+        document.getElementById("Navigation")?.classList.add("md:py-2");
       }
     });
   });
 
   return (
-    <nav id="Navigation" className={`${styles.navigation} hidden lg:block py-2`}>
-      <div className="container mx-auto flex px-8 xl:px-4">
+    <nav id="Navigation" className={`${styles.navigation} ${isOpen ? "w-full h-full bg-black" : "bg-transparent"}`}>
+      <div className="container mx-auto px-4 xl:px-4">
+        <div className="flex md:hidden">
+          <div className="ml-auto py-2">
+            <Hamburger toggled={isOpen} toggle={setOpen} />
+          </div>
+        </div>
+
         {[
           ["a2b", "/"],
           ["Тьюторство", "/tutering/"],
@@ -30,7 +38,7 @@ const Nav = (): JSX.Element => {
           ["Наша команда", "/#team"],
           ["Контакты", "/#contacts"],
         ].map(([title, url]) => (
-          <Link href={url} key={url} className={`${styles.navigation__link} pr-12 py-2 last:pr-0`}>
+          <Link href={url} key={url} className={`${styles.navigation__link} ${!isOpen ? "hidden" : "block"} md:inline-block pr-8 lg:pr-12 py-2 last:pr-0`}>
             {title}
           </Link>
         ))}
