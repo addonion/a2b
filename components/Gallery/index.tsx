@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./Gallery.module.scss";
+import styles from "./style.module.scss";
 
 import photo1 from "../../images/gallery/photo1.jpg";
 import photo2 from "../../images/gallery/photo2.jpg";

@@ -9,7 +9,7 @@ const DynamicForm = dynamic(() => import("../components/Form"), {
 });
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Main.module.scss";
+import styles from "./style.module.scss";
 import Typograf from "typograf";
 const tp = new Typograf({ locale: ["ru", "en-US"] });
 tp.enableRule("ru/nbsp/*"); // Включить все правила

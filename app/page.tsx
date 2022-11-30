@@ -1,17 +1,13 @@
-import Blocks from "editorjs-blocks-react-renderer";
 import Gallery from "@/components/Gallery";
 import Contacts from "@/components/Contacts";
 import Nav from "@/components/Nav";
 
-import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
-import styles from "../styles/Main.module.scss";
+import styles from "../styles/page.module.scss";
 
 // Images
 import heroPic from "../images/hero.png";
 import teambuildingPic from "../images/teambuilding.png";
-import feedbackPic from "../images/feedback.png";
 import teamNastya from "../images/team_nastya.png";
 import teamLeila from "../images/team_leila.png";
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import styles from "../../styles/Main.module.scss";
+import styles from "./style.module.scss";
 import contactsPic from "../../images/contacts.png";
 
 type Props = {};

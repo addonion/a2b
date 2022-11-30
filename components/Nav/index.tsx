@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "./Nav.module.scss";
+import styles from "./style.module.scss";
 import Hamburger from "hamburger-react";
 
 const Nav = (): JSX.Element => {
