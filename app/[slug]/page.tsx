@@ -63,7 +63,7 @@ export default async function Post({ params }: { params: TPage }) {
                 <div className="mb-16 lg:mb-32">
                   <Blocks data={JSON.parse(page.What)} />
                 </div>
-                <Image src={more2Pic} width={208} height={200} placeholder="blur" alt="Пьеро Мандзони, Дерьмо художника" />
+                <Image src={more2Pic} width={208} height={200} alt="Пьеро Мандзони, Дерьмо художника" />
               </div>
               <div className={`${styles.teambuilding__about__second} flex flex-col px-8 md:px-16 lg:px-0 py-16 lg:py-0`}>
                 <h3 className="mb-4">Что мы будем делать?</h3>
@@ -71,7 +71,7 @@ export default async function Post({ params }: { params: TPage }) {
                   <Blocks data={JSON.parse(page.How)} />
                 </div>
                 <div className="text-right">
-                  <Image src={more3Pic} width={161} height={288} placeholder="blur" alt="Пьеро Мандзони, Дерьмо художника" />
+                  <Image src={more3Pic} width={161} height={288} alt="Пьеро Мандзони, Дерьмо художника" />
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default async function Post({ params }: { params: TPage }) {
           </div>
           <div>
             <div className="w-1/4 lg:w-full xl:w-1/2 ml-auto">
-              <Image src={more4Pic} width={326} height={700} placeholder="blur" alt="Пьеро Мандзони, Дерьмо художника" />
+              <Image src={more4Pic} width={326} height={700} alt="Пьеро Мандзони, Дерьмо художника" />
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default async function Post({ params }: { params: TPage }) {
       <section className={`${styles.feedback} container mx-auto px-8 xl:px-4 py-16 md:py-32 lg:grid lg:grid-cols-3 lg:gap-16 xl:gap-32`}>
         <div className="w-2/3 mb-8 lg:w-full lg:col-span-1 lg:mb-0">
           <div>
-            <Image src={feedbackPic} width={426} height={535} placeholder="blur" alt="Юлия, директор общеобразовательной школы" />
+            <Image src={feedbackPic} width={426} height={535} alt="Юлия, директор общеобразовательной школы" />
           </div>
         </div>
         <div className="col-span-3 lg:col-span-2 my-auto">

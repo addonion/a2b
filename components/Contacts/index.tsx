@@ -38,7 +38,7 @@ const Contacts = (props: Props) => {
       </div>
       <div className={styles.contacts__pic}>
         <div className="pb-3">
-          <Image src={contactsPic} width={744} height={1062} placeholder="blur" alt="КОНТАКТЫ" />
+          <Image src={contactsPic} width={744} height={1062} alt="КОНТАКТЫ" />
         </div>
       </div>
     </section>

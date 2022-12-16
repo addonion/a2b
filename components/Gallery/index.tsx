@@ -18,39 +18,39 @@ export default function Gallery(): JSX.Element {
       <div className={styles.gallery}>
         <div className="flex">
           <div>
-            <Image src={photo4} placeholder="blur" alt="Фото 4" height={800} />
+            <Image src={photo4} alt="Фото 4" height={800} />
           </div>
 
           <div>
-            <Image src={photo3} placeholder="blur" alt="Фото 3" height={800} />
+            <Image src={photo3} alt="Фото 3" height={800} />
           </div>
 
           <div>
-            <Image src={photo7} placeholder="blur" alt="Фото 7" height={800} />
+            <Image src={photo7} alt="Фото 7" height={800} />
           </div>
 
           <div>
-            <Image src={photo1} placeholder="blur" alt="Фото 1" height={800} />
+            <Image src={photo1} alt="Фото 1" height={800} />
           </div>
 
           <div>
-            <Image src={photo5} placeholder="blur" alt="Фото 5" height={800} />
+            <Image src={photo5} alt="Фото 5" height={800} />
           </div>
 
           <div>
-            <Image src={photo6} placeholder="blur" alt="Фото 6" height={800} />
+            <Image src={photo6} alt="Фото 6" height={800} />
           </div>
 
           <div>
-            <Image src={photo8} placeholder="blur" alt="Фото 8" height={800} />
+            <Image src={photo8} alt="Фото 8" height={800} />
           </div>
 
           <div>
-            <Image src={photo9} placeholder="blur" alt="Фото 9" height={800} />
+            <Image src={photo9} alt="Фото 9" height={800} />
           </div>
 
           <div>
-            <Image src={photo2} placeholder="blur" alt="Фото 2" height={800} />
+            <Image src={photo2} alt="Фото 2" height={800} />
           </div>
         </div>
       </div>
