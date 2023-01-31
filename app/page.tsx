@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 
 import Image from "next/image";
 import styles from "../styles/page.module.scss";
+import Blocks from "editorjs-blocks-react-renderer";
 
 // Images
 import heroPic from "../images/hero.png";
@@ -14,15 +15,13 @@ import teamLeila from "../images/team_leila.png";
 type TSkill = {
   id: string;
   type: string;
-  data: {
-    text: string;
-  };
+  Text: string;
 };
 
 export default async function Home() {
   const { data } = await getData();
   const page = data.attributes;
-  const skills = JSON.parse(data.attributes.TeamSkills);
+  const team = data.attributes.Team;
 
   return (
     <>
@@ -59,9 +58,9 @@ export default async function Home() {
             </div>
           </div>
 
-          {skills.blocks.map((skill: TSkill) => (
-            <div className={`${styles.team__achivment} mt-8 lg:mt-12 p-6 md:py-12 md:px-8 lg:px-32 xl:px-64 text-black bg-white`} key={skill.id}>
-              {skill.data.text}
+          {team.map((skill: TSkill) => (
+            <div className={`${styles.team__achivment} mt-8 lg:mt-12 p-6 md:py-12 md:px-8 lg:px-32 xl:px-32 text-black bg-white`} key={skill.id}>
+              <Blocks data={JSON.parse(skill.Text)} />
             </div>
           ))}
         </div>
