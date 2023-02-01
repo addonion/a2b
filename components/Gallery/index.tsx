@@ -18,14 +18,6 @@ export default function Gallery(): JSX.Element {
       <div className={styles.gallery}>
         <div className="flex">
           <div>
-            <Image src={photo4} alt="Фото 4" height={800} />
-          </div>
-
-          <div>
-            <Image src={photo3} alt="Фото 3" height={800} />
-          </div>
-
-          <div>
             <Image src={photo7} alt="Фото 7" height={800} />
           </div>
 
@@ -51,6 +43,13 @@ export default function Gallery(): JSX.Element {
 
           <div>
             <Image src={photo2} alt="Фото 2" height={800} />
+          </div>
+          <div>
+            <Image src={photo4} alt="Фото 4" height={800} />
+          </div>
+
+          <div>
+            <Image src={photo3} alt="Фото 3" height={800} />
           </div>
         </div>
       </div>
