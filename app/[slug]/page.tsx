@@ -24,6 +24,7 @@ import feedbackPic from "../../images/feedback.png";
 type TPages = { attributes: { Slug: string } };
 type TPage = { slug: string };
 
+// Адреса страниц
 export async function generateStaticParams() {
   const res = await fetch(`https://server.art2business.ru/api/services?fields=slug`).then((res) => res.json());
   return res.data.map((page: TPages) => ({
@@ -31,15 +32,30 @@ export async function generateStaticParams() {
   }));
 }
 
+// Данные для страницы
 async function fetchPost(params: TPage) {
-  const res = await fetch(`https://server.art2business.ru/api/services?filters[Slug][$eq]=${params.slug}&populate=*`);
+  const res = await fetch(`https://server.art2business.ru/api/services?filters[Slug][$eq]=${params.slug}&populate=seo`);
   const data = await res.json();
   return data;
+}
+
+export async function generateMetadata({ params }: { params: TPage }) {
+  const { data } = await fetchPost(params);
+  const page = data[0].attributes;
+
+  return {
+    title: page.seo.metaTitle,
+    description: page.seo.metaDescription,
+    alternates: {
+      canonical: `https://www.art2business.ru/${params.slug}/`,
+    },
+  };
 }
 
 export default async function Post({ params }: { params: TPage }) {
   const { data } = await fetchPost(params);
   const page = data[0].attributes;
+
   return (
     <>
       {/* Навигация десктоп */}
@@ -59,17 +75,11 @@ export default async function Post({ params }: { params: TPage }) {
           <div className="lg:container lg:mx-auto lg:py-16 relative z-10">
             <div className="lg:grid grid-cols-2 gap-32 lg:px-8 xl:px-4">
               <div className={`${styles.teambuilding__about__first} flex flex-col px-8 md:px-16 lg:px-0 py-16 lg:py-0`}>
-                <h3 className="mb-4">Что это?</h3>
-                <div className="mb-16 lg:mb-32">
-                  <Blocks data={JSON.parse(page.What)} />
-                </div>
+                <div className="mb-4" dangerouslySetInnerHTML={{ __html: tp.execute(data[0].attributes.leftColumn) }} />
                 <Image src={more2Pic} width={208} height={200} alt="Пьеро Мандзони, Дерьмо художника" />
               </div>
               <div className={`${styles.teambuilding__about__second} flex flex-col px-8 md:px-16 lg:px-0 py-16 lg:py-0`}>
-                <h3 className="mb-4">Что мы будем делать?</h3>
-                <div className="mb-8 lg:mb-12">
-                  <Blocks data={JSON.parse(page.How)} />
-                </div>
+                <div className="mb-4" dangerouslySetInnerHTML={{ __html: tp.execute(data[0].attributes.rightColumn) }} />
                 <div className="text-right">
                   <Image src={more3Pic} width={161} height={288} alt="Пьеро Мандзони, Дерьмо художника" />
                 </div>
@@ -83,13 +93,7 @@ export default async function Post({ params }: { params: TPage }) {
       <section id="price" className={`${styles.price} `}>
         <div className="container mx-auto lg:grid lg:grid-cols-3 xl:grid-cols-2 lg:gap-32 px-8 xl:px-4 py-16 md:py-32">
           <div className="lg:col-span-2 xl:col-span-1">
-            <h2 className="mb-4">Цена:</h2>
-            <div className="mb-4">
-              <Blocks data={JSON.parse(page.Price)} />
-            </div>
-            {/* <Suspense fallback={`Загрузка формы...`}>
-              <DynamicForm />
-            </Suspense> */}
+            <div className="mb-4" dangerouslySetInnerHTML={{ __html: tp.execute(data[0].attributes.Bottom) }} />
           </div>
           <div>
             <div className="w-1/4 lg:w-full xl:w-1/2 ml-auto">

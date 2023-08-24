@@ -18,6 +18,19 @@ type TSkill = {
   Text: string;
 };
 
+export async function generateMetadata() {
+  const { data } = await getData();
+  const page = data.attributes;
+
+  return {
+    title: page.seo.metaTitle,
+    description: page.seo.metaDescription,
+    alternates: {
+      canonical: "https://www.art2business.ru/",
+    },
+  };
+}
+
 export default async function Home() {
   const { data } = await getData();
   const page = data.attributes;

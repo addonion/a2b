@@ -12,9 +12,9 @@ const Nav = (): JSX.Element => {
     // Фиксируем при прокрутке навигацию
     let navigationPosition = document.getElementById("Navigation")!.offsetTop;
     window.addEventListener("scroll", function () {
-      if (window.pageYOffset > navigationPosition) {
+      if (window.scrollY > navigationPosition) {
         document.getElementById("Navigation")?.classList.add(styles.sticky);
-        if (window.pageYOffset > navigationPosition + 20) {
+        if (window.scrollY > navigationPosition + 20) {
           document.getElementById("Navigation")?.classList.remove("md:py-2");
         }
       } else {
@@ -35,7 +35,7 @@ const Nav = (): JSX.Element => {
 
         {[
           ["a2b", "/"],
-          ["Тьюторство", "/tutering/"],
+          ["Арт-медиация", "/art-mediation/"],
           ["Тимбилдинг", "/team-building/"],
           ["Наша команда", "/#team"],
           ["Контакты", "/#contacts"],
