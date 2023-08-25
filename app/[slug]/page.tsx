@@ -1,11 +1,5 @@
 import Nav from "@/components/Nav";
 import Image from "next/image";
-import Blocks from "editorjs-blocks-react-renderer";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
-const DynamicForm = dynamic(() => import("../../components/Form"), {
-  suspense: true,
-});
 
 // Типограф
 import Typograf from "typograf";

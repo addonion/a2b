@@ -61,6 +61,8 @@ h2,
 }
 h3,
 .h3 {
+  padding-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 1.3rem;
   line-height: 1.8rem;
   @media (min-width: 1024px) {
@@ -69,14 +71,21 @@ h3,
   }
 }
 
-ul li {
-  position: relative;
-  padding-left: 1rem;
-  &::before {
-    content: " – ";
-    position: absolute;
-    top: -0.15rem;
-    left: 0;
+p, ul {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin: 0.5rem 0;
+  li {
+    position: relative;
+    padding-left: 1rem;
+    &::before {
+      content: " – ";
+      position: absolute;
+      top: -0.15rem;
+      left: 0;
+    }
   }
 }
 
