@@ -1,5 +1,5 @@
 import Script from "next/script";
-import "../styles/globals.scss";
+import "./globals.scss";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

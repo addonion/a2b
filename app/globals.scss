@@ -43,8 +43,9 @@ h3,
 }
 h1,
 .h1 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.7rem;
+  line-height: 1.8rem;
+  margin-bottom: 1rem;
   @media (min-width: 1024px) {
     font-size: 2rem;
     line-height: 2.5rem;
@@ -71,7 +72,8 @@ h3,
   }
 }
 
-p, ul {
+p,
+ul {
   margin-bottom: 1rem;
 }
 

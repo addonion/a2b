@@ -44,3 +44,12 @@
     }
   }
 }
+
+.feedback {
+  &__text {
+    font-size: 0.8rem;
+    p {
+      margin-bottom: 0.4rem;
+    }
+  }
+}

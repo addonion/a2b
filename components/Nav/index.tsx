@@ -25,7 +25,7 @@ const Nav = (): JSX.Element => {
   });
 
   return (
-    <nav id="Navigation" className={`${styles.navigation} ${isOpen ? "w-full h-full bg-black" : "bg-transparent"}`}>
+    <nav id="Navigation" className={`${styles.navigation} ${isOpen ? "w-full h-full bg-black" : "bg-transparent"} md:py-2`}>
       <div className="container mx-auto px-4 xl:px-4">
         <div className="flex md:hidden">
           <div className="ml-auto py-2">

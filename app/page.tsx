@@ -3,8 +3,12 @@ import Contacts from "@/components/Contacts";
 import Nav from "@/components/Nav";
 
 import Image from "next/image";
-import styles from "../styles/page.module.scss";
-import Blocks from "editorjs-blocks-react-renderer";
+import styles from "./page.module.scss";
+
+// Типограф
+import Typograf from "typograf";
+const tp = new Typograf({ locale: ["ru", "en-US"] });
+tp.enableRule("ru/nbsp/*"); // Включить все правила
 
 // Images
 import heroPic from "../images/hero.png";
@@ -72,9 +76,7 @@ export default async function Home() {
           </div>
 
           {team.map((skill: TSkill) => (
-            <div className={`${styles.team__achivment} mt-8 lg:mt-12 p-6 md:py-12 md:px-8 lg:px-32 xl:px-32 text-black bg-white`} key={skill.id}>
-              <Blocks data={JSON.parse(skill.Text)} />
-            </div>
+            <div className={`${styles.team__achivment} mt-8 lg:mt-12 p-6 md:py-12 md:px-8 lg:px-32 xl:px-32 text-black bg-white`} key={skill.id} dangerouslySetInnerHTML={{ __html: tp.execute(skill.Text) }} />
           ))}
         </div>
       </section>
