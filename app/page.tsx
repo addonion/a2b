@@ -71,7 +71,7 @@ export default async function Home() {
               <Image src={teamNastya} width={663} height={668} alt="Анастасия" />
             </div>
             <div>
-              <Image src={teamLeila} width={680} height={688} alt="Анастасия" />
+              <Image src={teamLeila} width={680} height={688} alt="Лейла" />
             </div>
           </div>
 

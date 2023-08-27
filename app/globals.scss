@@ -91,6 +91,10 @@ ul {
   }
 }
 
+strong {
+  font-weight: bold;
+}
+
 @media (min-width: 1024px) {
   .service__title {
     font-size: 2rem;

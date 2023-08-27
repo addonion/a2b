@@ -10,6 +10,7 @@ tp.enableRule("ru/nbsp/*"); // Включить все правила
 import styles from "./styles.module.scss";
 
 // Images
+import teamLeila from "../../images/team_leila.png";
 import Contacts from "@/components/Contacts";
 
 // Page atributes
@@ -73,11 +74,14 @@ export default async function Post({ params }: { params: TPage }) {
         </div>
       </section>
 
-      {/* Цена */}
+      {/* Нижний блок */}
       <section id="price" className={`${styles.price} `}>
-        <div className="container mx-auto lg:grid xl:grid-cols-3 lg:gap-32 px-8 xl:px-4 py-16 md:py-32">
-          <div className="lg:col-span-2 xl:col-span-2">
+        <div className="container mx-auto lg:grid xl:grid-cols-3 xl:gap-8 px-8 xl:px-4 py-16 md:py-32">
+          <div className="xl:col-span-2">
             <div className="mb-4" dangerouslySetInnerHTML={{ __html: tp.execute(data[0].attributes.Bottom) }} />
+          </div>
+          <div className="flex xl:col-span-1">
+            <Image src={teamLeila} width={680} height={688} alt="Лейла" className="mt-auto" />
           </div>
         </div>
       </section>
