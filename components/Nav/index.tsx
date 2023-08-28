@@ -37,7 +37,6 @@ const Nav = (): JSX.Element => {
           ["a2b", "/"],
           ["Арт-медиация", "/art-mediation/"],
           ["Тимбилдинг", "/team-building/"],
-          ["Наша команда", "/#team"],
           ["Контакты", "/#contacts"],
         ].map(([title, url]) => (
           <Link href={url} onClick={() => setOpen(false)} key={url} className={`${styles.navigation__link} ${!isOpen ? "hidden" : "block"} md:inline-block pr-8 lg:pr-12 py-2 last:pr-0`}>
